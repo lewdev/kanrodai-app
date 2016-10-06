@@ -23,21 +23,28 @@
   <target name="xampp-copy-all" depends="xampp-init, compass-compile-sass">
     <!-- Copy Bonfire core stuff -->
     <copy todir="${dir.xampp.app}">
-      <fileset dir="${basedir}" excludes="**/*.scc,*.md,build.xml,.project,**/*.woff,**/*.ttf" />
+      <fileset dir="${basedir}/public" excludes="**/*.scc,**/*.woff,**/*.ttf" />
     </copy>
   </target>
 
   <target name="xampp-init">
     <!-- Create the build directory structure used by compile -->
     <mkdir dir="${dir.xampp.app}" />
-    <mkdir dir="${dir.xampp.bootstrap}/css" />
-    <mkdir dir="${dir.xampp.bootstrap}/js" />
-    <mkdir dir="${dir.xampp.bootstrap}/fonts" />
+    <mkdir dir="${dir.xampp.app}/css" />
+    <mkdir dir="${dir.xampp.app}/js" />
   </target>
 
   <target name="compass-compile-sass" depends="">
     <exec executable="cmd">
       <arg value="/c compass compile sass/styles.scss"/>
+    </exec>
+  </target>
+
+  <!-- This is not used. Left here for me to remember-->
+  <target name="closure-compile-js" depends="">
+    <exec executable="c:\apps\closure\closure.bat" dir=".">
+      <arg value="./js_src/*.js"/>
+      <arg value="./public/js/app.js"/>
     </exec>
   </target>
 
