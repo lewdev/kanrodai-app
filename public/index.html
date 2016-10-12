@@ -23,7 +23,7 @@
     <meta property="og:image" content="https://lewdev.github.io/kanrodai-app/images/kanrodai-beige-sm-red-bg.jpg" />
     <meta property="og:description" content="Finally, a web app that helps you find which way is the Kanrodai and even how far it is from you!" />
   </head>
-  <body>
+  <body onload="initMap()">
 
     <nav class="navbar navbar-inverse navbar-fixed-top kanrodai-navbar">
       <div class="container">
@@ -117,7 +117,7 @@
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6AfTuAsQ40bgMiHYTo1-dO3COLMVVeM0&callback=initMap"></script>
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/GreatCircle.js"></script>
-    <script src="js/KanrodaiApp.js"></script>
+    <script src="js/GreatCircle.min.js"></script>
+    <script src="js/KanrodaiApp.min.js"></script>
   </body>
 </html>
