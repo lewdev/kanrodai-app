@@ -4,6 +4,7 @@
   <property environment="env" />
   <property name="app.name" value="kanrodai-app" />
 
+  <property name="dir.closure" location="C:/Users/Owner/apps/closure" />
   <property name="dir.xampp.app" location="C:/xampp/htdocs/${app.name}" />
   <property name="dir.xampp.bootstrap" location="${dir.xampp.app}/bootstrap-3.3.7-dist" />
 
@@ -42,9 +43,9 @@
 
   <!-- This is not used. Left here for me to remember-->
   <target name="closure-compile-js" depends="">
-    <exec executable="c:\apps\closure\closure.bat" dir=".">
-      <arg value="./js_src/*.js"/>
-      <arg value="./public/js/app.js"/>
+    <exec executable="${dir.closure}/closure.bat" dir=".">
+      <arg value="${basedir}/js_src/**.js" />
+      <arg value="${basedir}/public/js/${app.name}.min.js"/>
     </exec>
   </target>
 
